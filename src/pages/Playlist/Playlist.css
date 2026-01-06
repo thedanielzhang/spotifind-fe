@@ -1,0 +1,439 @@
+/* ===========================
+   Page container
+   =========================== */
+
+.playlist-page {
+  /* You can re-enable these if you want a centered page:
+     max-width: 960px;
+     margin: 0 auto;
+     padding: 24px 16px 40px;
+  */
+  color: #ffffff;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden; /* keep scroll inside inner content (timeline, etc.) */
+  background: radial-gradient(circle at top left, #1f2937 0, #020617 54%, #020617 100%);
+
+  /* NEW: allow topbar + content to fit in viewport */
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* ===========================
+   Layout
+   =========================== */
+
+/* Mobile / narrow:
+   - sidebar on top, timeline below
+   - initial: 50 / 50
+   - collapsed: 25 / 75
+*/
+.playlist-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr; /* 50 / 50 split */
+  height: 100%;
+  gap: 16px;
+  transition: grid-template-rows 0.25s ease;
+
+  /* NEW: layout should take remaining space below topbar */
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.playlist-layout--collapsed {
+  grid-template-rows: 0.15fr 0.85fr; /* 25 / 75 split when collapsed */
+}
+
+.playlist-sidebar {
+  min-height: 0; /* allow child card to flex correctly */
+  width: 100vw;
+}
+
+.playlist-timeline {
+  min-height: 0; /* let inner .timeline-container handle scrolling */
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===========================
+   Playlist header (optional, if used)
+   =========================== */
+
+.playlist-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.playlist-title {
+  margin: 0 0 4px 0;
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.playlist-subtitle {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ===========================
+   Primary action button
+   =========================== */
+
+.playlist-action {
+  background: linear-gradient(135deg, #6ee7f9 0%, #a78bfa 100%);
+  color: #0f1221;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+.playlist-action:hover {
+  filter: brightness(1.05);
+}
+
+/* ===========================
+   Empty state inside timeline
+   =========================== */
+
+.empty-state {
+  display: grid;
+  place-items: center;
+  gap: 8px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 24px;
+  margin-top: 8px;
+}
+
+.empty-art {
+  font-size: 28px;
+}
+
+/* ===========================
+   Sidebar card
+   =========================== */
+
+.playlist-sidebar .playlist-card {
+  background: #0f1221;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  height: 100%;
+}
+
+/* Cover image: collapsible section */
+.playlist-cover {
+  width: auto;
+  height: 100%;
+  display: block;
+  transition: height 0.25s ease, opacity 0.25s ease;
+}
+
+/* When collapsed, hide the cover but keep body */
+.playlist-layout--collapsed .playlist-cover {
+  height: 0 !important;
+  opacity: 0;
+}
+
+/* DEFAULT (expanded) — overlay playlist-card-body over bottom of cover */
+.playlist-card-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  padding: 16px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0));
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* COLLAPSED — body becomes full-height, reverts to normal flow */
+.playlist-layout--collapsed .playlist-card-body {
+  position: static; /* stop overlaying */
+  background: none; /* remove image gradient */
+  flex: 1 1 auto; /* grow to fill sidebar row */
+  padding: 12px; /* tighter spacing */
+  min-height: 0;
+  justify-content: center; /* optional visual centering */
+}
+
+.playlist-card-title {
+  margin: 0 0 4px 0;
+  font-size: 84px;
+}
+
+.playlist-card-desc {
+  margin: 0 0 8px 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 36px;
+}
+
+.playlist-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4px 8px;
+  border-radius: 9999px;
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ===========================
+   Desktop layout
+   =========================== */
+
+@media (min-width: 1000px) {
+  .playlist-layout {
+    grid-template-columns: minmax(260px, 35%) 1fr;
+    grid-template-rows: 1fr; /* single row, full height */
+    align-items: stretch;
+  }
+
+  .playlist-sidebar {
+    align-self: stretch;
+    width: 100%;
+  }
+
+  .playlist-timeline {
+    align-self: stretch;
+  }
+
+  .playlist-card-title {
+    font-size: 24px;
+  }
+
+  .playlist-card-desc {
+    font-size: 12px;
+  }
+
+  .pill {
+    font-size: 12px;
+  }
+}
+
+/* ===========================
+   Top bar
+   =========================== */
+
+.playlist-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(10, 12, 18, 0.75);
+  backdrop-filter: blur(10px);
+
+  /* responsive wrap */
+  flex-wrap: wrap;
+}
+
+.playlist-topbar-title {
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.playlist-topbar-subtitle {
+  margin-top: 2px;
+  font-size: 12px;
+  opacity: 0.7;
+
+  white-space: normal;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.playlist-topbar-detail {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+  max-width: 100%;
+}
+
+.topbar-muted {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.topbar-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.topbar-avatar {
+  border-radius: 9999px;
+  object-fit: cover;
+}
+
+.topbar-username {
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0.9;
+
+  max-width: 140px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.topbar-btn {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+  color: inherit;
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.topbar-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.topbar-btn.primary {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.10);
+}
+
+@media (max-width: 520px) {
+  .playlist-topbar {
+    padding: 10px 10px;
+  }
+
+  .topbar-username {
+    max-width: 90px;
+  }
+
+  .topbar-btn {
+    padding: 7px 9px;
+  }
+}
+
+/* ===========================
+   Modal
+   =========================== */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: rgba(0, 0, 0, 0.55);
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+
+.modal {
+  width: min(420px, 100%);
+  border-radius: 16px;
+  background: rgba(18, 20, 28, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.modal-title {
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.modal-close {
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+.modal-close:hover {
+  opacity: 1;
+}
+
+.modal-body {
+  padding: 14px;
+  display: grid;
+  gap: 12px;
+}
+
+.modal-label {
+  font-size: 12px;
+  opacity: 0.9;
+  display: grid;
+  gap: 6px;
+}
+
+.modal-input {
+  width: 100%;
+  padding: 10px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.04);
+  color: inherit;
+  outline: none;
+}
+
+.modal-input:focus {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.modal-error {
+  font-size: 12px;
+  color: #ff9b9b;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 12px 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}

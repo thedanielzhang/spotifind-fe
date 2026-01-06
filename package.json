@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "flow-bin": "^0.264.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router": "^7.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.10",
+    "@babel/plugin-transform-flow-strip-types": "^7.26.5",
+    "parcel": "^2.13.3",
+    "process": "^0.11.10",
+    "typescript": "^5.8.2"
+  },
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  }
+}

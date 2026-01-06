@@ -1,0 +1,44 @@
+.fab {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 128px;
+  height: 128px;
+  border-radius: 9999px;
+  border: none;
+  background: linear-gradient(135deg, #6ee7f9 0%, #a78bfa 100%);
+  color: #0f1221;
+  font-size: 64px;
+  font-weight: 700;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+  cursor: pointer;
+}
+.fab:hover { filter: brightness(1.05); }
+.fab:focus { outline: 3px solid rgba(167,139,250,0.7); outline-offset: 2px; }
+.fab-icon { display: inline-block; transform: translateY(-1px); }
+
+@media (min-width: 1000px) {
+  .fab { right: 28px; bottom: 28px; width: 64px; height: 64px; font-size: 32px; }
+}
+
+/* ===========================
+   Disabled state
+   =========================== */
+
+.fab:disabled,
+.fab[aria-disabled="true"] {
+  background: linear-gradient(135deg, #9ca3af 0%, #6b7280 100%); /* muted gray */
+  color: rgba(15, 18, 33, 0.5);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+/* Remove hover/focus effects when disabled */
+.fab:disabled:hover,
+.fab:disabled:focus {
+  filter: none;
+  outline: none;
+}
+
+

@@ -1,0 +1,33 @@
+/* Timeline container */
+.timeline-container {
+  background: #0f1221;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding-bottom: 48px;
+  height: 100%;
+  overflow-y: auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.timeline-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+/* Vertical spine */
+.timeline-list::before {
+  content: "";
+  position: absolute;
+  left: 28px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.06), rgba(255,255,255,0.12));
+}
+
+@media (max-width: 420px) {
+  .timeline-list::before { opacity: 0.4; }
+}
+

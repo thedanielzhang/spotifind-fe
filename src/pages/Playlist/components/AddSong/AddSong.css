@@ -1,0 +1,76 @@
+.add-song {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%; /* or 100vh */
+}
+
+.add-song-header { display: flex; align-items: center; justify-content: space-between; }
+.add-song-title { margin: 0; }
+.add-song-close { background: transparent; border: none; font-size: 32px; cursor: pointer; }
+
+.add-song-search { margin-top: 4px; }
+.add-song-input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: #f5f7fb;
+}
+
+.add-song-results {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1 1 0;
+  min-height: 0;
+}
+.add-song-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background: #fff;
+}
+.add-song-row:hover { background: #f7f8fc; }
+.add-song-row.selected { border-color: #a78bfa; background: #f5f1ff; }
+.add-song-art { width: 64px; height: 64px; border-radius: 6px; object-fit: cover; }
+.add-song-row-text { display: flex; flex-direction: column; align-items: flex-start; color: black;}
+.add-song-row-title { font-weight: 600; font-size: 32px; }
+.add-song-row-sub { font-size: 32px; color: #555; }
+
+.add-song-selected { margin-top: 4px; }
+.selected-card { margin: 0; display: flex; align-items: center; gap: 10px; background: #f6f8ff; border: 1px solid #e6eaff; border-radius: 10px; }
+.selected-art { border-radius: 6px; }
+.selected-title { font-weight: 600; color: black; font-size: 32px; }
+.selected-sub { font-size: 32px; color: #666; }
+.selected-placeholder { color: #777; font-size: 32px; }
+
+.add-song-comment {}
+.add-song-textarea { width: 100%; border-radius: 10px; border: 1px solid rgba(0,0,0,0.1); padding: 10px 12px; resize: vertical; font-size: 32px; }
+
+.add-song-footer { display: flex; justify-content: space-between; gap: 12px; margin-top: 4px; }
+.btn { padding: 10px 12px; border-radius: 10px; border: none; cursor: pointer; font-size: 42px;}
+.btn.ghost { background: transparent; border: 1px solid #ddd; }
+.btn.primary { background: #0f1221; color: #fff; }
+.btn.primary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+@media (min-width: 1000px) {
+  /* Typography scale for large screens: 24px / 20px / 12px */
+  .add-song-title { font-size: 18px; }
+  .add-song-row-title,
+  .selected-title { font-size: 18px; }
+
+  .add-song-row-sub,
+  .selected-sub,
+  .selected-placeholder,
+  .add-song-input,
+  .add-song-textarea,
+  .btn { font-size: 18px; }
+
+  .add-song-close { font-size: 12px; }
+}
