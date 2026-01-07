@@ -13,6 +13,8 @@ interface CreatePlaylistProps {
   onConfigured?: () => void;
 }
 
+const API_BASE = process.env.API_URL;
+
 const CreatePlaylist: React.FC<CreatePlaylistProps> = ({ onConfigured }) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -26,7 +28,7 @@ const CreatePlaylist: React.FC<CreatePlaylistProps> = ({ onConfigured }) => {
   useEffect(() => {
     async function loadStatus() {
       try {
-        const res = await fetch("http://127.0.0.1:8000/playlist/config");
+        const res = await fetch(`${API_BASE}/playlist/config`);
         const data: PlaylistConfigStatus = await res.json();
         setPlaylistExists(data.exists);
         if (!data.exists) {
@@ -64,7 +66,7 @@ const CreatePlaylist: React.FC<CreatePlaylistProps> = ({ onConfigured }) => {
     setError(null);
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/playlist/config", {
+      const res = await fetch(`${API_BASE}/playlist/config`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",

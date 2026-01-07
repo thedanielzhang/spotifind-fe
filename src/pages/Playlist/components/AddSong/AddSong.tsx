@@ -14,6 +14,8 @@ export interface AddSongProps {
   onAdd: (song: SongResult, comment: string) => void;
 }
 
+const API_BASE = process.env.API_URL;
+
 const AddSong: React.FC<AddSongProps> = ({ onCancel, onAdd }) => {
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState<SongResult | null>(null);
@@ -43,7 +45,7 @@ const AddSong: React.FC<AddSongProps> = ({ onCancel, onAdd }) => {
     const timeoutId = window.setTimeout(async () => {
       try {
         const resp = await fetch(
-          `http://127.0.0.1:8000/spotify/search?q=${encodeURIComponent(trimmed)}`,
+          `${API_BASE}/spotify/search?q=${encodeURIComponent(trimmed)}`,
           { signal: controller.signal }
         );
 

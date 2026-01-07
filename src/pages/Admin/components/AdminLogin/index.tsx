@@ -5,6 +5,8 @@ interface AdminLoginProps {
   onLoginSuccess?: () => void;
 }
 
+const API_BASE = process.env.API_URL;
+
 const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -17,7 +19,7 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess }) => {
     setError(null);
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/admin/login", {
+      const res = await fetch(`${API_BASE}/admin/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",

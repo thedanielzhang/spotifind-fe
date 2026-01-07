@@ -5,6 +5,8 @@ interface ConnectSpotifyProps {
   onConnected?: () => void;
 }
 
+const API_BASE = process.env.API_URL;
+
 const ConnectSpotify: React.FC<ConnectSpotifyProps> = ({ onConnected }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -14,7 +16,7 @@ const ConnectSpotify: React.FC<ConnectSpotifyProps> = ({ onConnected }) => {
     setError(null);
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/admin/spotify/authorize", {
+      const res = await fetch(`${API_BASE}/admin/spotify/authorize`, {
         credentials: "include",
       });
 

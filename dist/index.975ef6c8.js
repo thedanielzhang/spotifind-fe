@@ -29286,6 +29286,7 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _addSongCss = require("./AddSong.css");
 var _s = $RefreshSig$();
+const API_BASE = "http://127.0.0.1:8000";
 const AddSong = ({ onCancel, onAdd })=>{
     _s();
     const [query, setQuery] = (0, _react.useState)("");
@@ -29309,7 +29310,7 @@ const AddSong = ({ onCancel, onAdd })=>{
         const controller = new AbortController();
         const timeoutId = window.setTimeout(async ()=>{
             try {
-                const resp = await fetch(`http://127.0.0.1:8000/spotify/search?q=${encodeURIComponent(trimmed)}`, {
+                const resp = await fetch(`${API_BASE}/spotify/search?q=${encodeURIComponent(trimmed)}`, {
                     signal: controller.signal
                 });
                 if (!resp.ok) {
@@ -29364,7 +29365,7 @@ const AddSong = ({ onCancel, onAdd })=>{
                         children: "Add a song"
                     }, void 0, false, {
                         fileName: "src/pages/Playlist/components/AddSong/AddSong.tsx",
-                        lineNumber: 105,
+                        lineNumber: 107,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -29374,13 +29375,13 @@ const AddSong = ({ onCancel, onAdd })=>{
                         children: "\u2715"
                     }, void 0, false, {
                         fileName: "src/pages/Playlist/components/AddSong/AddSong.tsx",
-                        lineNumber: 106,
+                        lineNumber: 108,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/pages/Playlist/components/AddSong/AddSong.tsx",
-                lineNumber: 104,
+                lineNumber: 106,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -29396,12 +29397,12 @@ const AddSong = ({ onCancel, onAdd })=>{
                     className: "add-song-input"
                 }, void 0, false, {
                     fileName: "src/pages/Playlist/components/AddSong/AddSong.tsx",
-                    lineNumber: 110,
+                    lineNumber: 112,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/pages/Playlist/components/AddSong/AddSong.tsx",
-                lineNumber: 109,
+                lineNumber: 111,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -29412,7 +29413,7 @@ const AddSong = ({ onCancel, onAdd })=>{
                         children: "Searching\u2026"
                     }, void 0, false, {
                         fileName: "src/pages/Playlist/components/AddSong/AddSong.tsx",
-                        lineNumber: 123,
+                        lineNumber: 125,
                         columnNumber: 23
                     }, undefined),
                     fetchError && !isLoading && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -29420,7 +29421,7 @@ const AddSong = ({ onCancel, onAdd })=>{
                         children: fetchError
                     }, void 0, false, {
                         fileName: "src/pages/Playlist/components/AddSong/AddSong.tsx",
-                        lineNumber: 126,
+                        lineNumber: 128,
                         columnNumber: 11
                     }, undefined),
                     !isLoading && !fetchError && query.length >= 2 && results.length === 0 && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -29428,7 +29429,7 @@ const AddSong = ({ onCancel, onAdd })=>{
                         children: "No results found."
                     }, void 0, false, {
                         fileName: "src/pages/Playlist/components/AddSong/AddSong.tsx",
-                        lineNumber: 130,
+                        lineNumber: 132,
                         columnNumber: 11
                     }, undefined),
                     results.map((s)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -29443,13 +29444,13 @@ const AddSong = ({ onCancel, onAdd })=>{
                                     height: 64
                                 }, void 0, false, {
                                     fileName: "src/pages/Playlist/components/AddSong/AddSong.tsx",
-                                    lineNumber: 140,
+                                    lineNumber: 142,
                                     columnNumber: 15
                                 }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                     className: "add-song-art add-song-art--placeholder"
                                 }, void 0, false, {
                                     fileName: "src/pages/Playlist/components/AddSong/AddSong.tsx",
-                                    lineNumber: 148,
+                                    lineNumber: 150,
                                     columnNumber: 15
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -29460,7 +29461,7 @@ const AddSong = ({ onCancel, onAdd })=>{
                                             children: s.title
                                         }, void 0, false, {
                                             fileName: "src/pages/Playlist/components/AddSong/AddSong.tsx",
-                                            lineNumber: 152,
+                                            lineNumber: 154,
                                             columnNumber: 15
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -29471,25 +29472,25 @@ const AddSong = ({ onCancel, onAdd })=>{
                                             ]
                                         }, void 0, true, {
                                             fileName: "src/pages/Playlist/components/AddSong/AddSong.tsx",
-                                            lineNumber: 153,
+                                            lineNumber: 155,
                                             columnNumber: 15
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/pages/Playlist/components/AddSong/AddSong.tsx",
-                                    lineNumber: 151,
+                                    lineNumber: 153,
                                     columnNumber: 13
                                 }, undefined)
                             ]
                         }, s.id, true, {
                             fileName: "src/pages/Playlist/components/AddSong/AddSong.tsx",
-                            lineNumber: 134,
+                            lineNumber: 136,
                             columnNumber: 11
                         }, undefined))
                 ]
             }, void 0, true, {
                 fileName: "src/pages/Playlist/components/AddSong/AddSong.tsx",
-                lineNumber: 122,
+                lineNumber: 124,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -29505,13 +29506,13 @@ const AddSong = ({ onCancel, onAdd })=>{
                             height: 72
                         }, void 0, false, {
                             fileName: "src/pages/Playlist/components/AddSong/AddSong.tsx",
-                            lineNumber: 166,
+                            lineNumber: 168,
                             columnNumber: 15
                         }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                             className: "add-song-art add-song-art--placeholder"
                         }, void 0, false, {
                             fileName: "src/pages/Playlist/components/AddSong/AddSong.tsx",
-                            lineNumber: 174,
+                            lineNumber: 176,
                             columnNumber: 15
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -29522,7 +29523,7 @@ const AddSong = ({ onCancel, onAdd })=>{
                                     children: selected.title
                                 }, void 0, false, {
                                     fileName: "src/pages/Playlist/components/AddSong/AddSong.tsx",
-                                    lineNumber: 177,
+                                    lineNumber: 179,
                                     columnNumber: 15
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -29533,31 +29534,31 @@ const AddSong = ({ onCancel, onAdd })=>{
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/pages/Playlist/components/AddSong/AddSong.tsx",
-                                    lineNumber: 178,
+                                    lineNumber: 180,
                                     columnNumber: 15
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/pages/Playlist/components/AddSong/AddSong.tsx",
-                            lineNumber: 176,
+                            lineNumber: 178,
                             columnNumber: 13
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/pages/Playlist/components/AddSong/AddSong.tsx",
-                    lineNumber: 164,
+                    lineNumber: 166,
                     columnNumber: 11
                 }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     className: "selected-placeholder",
                     children: "Pick a song to enable the button"
                 }, void 0, false, {
                     fileName: "src/pages/Playlist/components/AddSong/AddSong.tsx",
-                    lineNumber: 185,
+                    lineNumber: 187,
                     columnNumber: 11
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/pages/Playlist/components/AddSong/AddSong.tsx",
-                lineNumber: 162,
+                lineNumber: 164,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -29570,12 +29571,12 @@ const AddSong = ({ onCancel, onAdd })=>{
                     onChange: (e)=>setComment(e.target.value)
                 }, void 0, false, {
                     fileName: "src/pages/Playlist/components/AddSong/AddSong.tsx",
-                    lineNumber: 190,
+                    lineNumber: 192,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/pages/Playlist/components/AddSong/AddSong.tsx",
-                lineNumber: 189,
+                lineNumber: 191,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -29587,7 +29588,7 @@ const AddSong = ({ onCancel, onAdd })=>{
                         children: "Cancel"
                     }, void 0, false, {
                         fileName: "src/pages/Playlist/components/AddSong/AddSong.tsx",
-                        lineNumber: 200,
+                        lineNumber: 202,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -29597,19 +29598,19 @@ const AddSong = ({ onCancel, onAdd })=>{
                         children: "Add to playlist"
                     }, void 0, false, {
                         fileName: "src/pages/Playlist/components/AddSong/AddSong.tsx",
-                        lineNumber: 201,
+                        lineNumber: 203,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/pages/Playlist/components/AddSong/AddSong.tsx",
-                lineNumber: 199,
+                lineNumber: 201,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/pages/Playlist/components/AddSong/AddSong.tsx",
-        lineNumber: 103,
+        lineNumber: 105,
         columnNumber: 5
     }, undefined);
 };
@@ -29645,6 +29646,7 @@ var _createPlaylistDefault = parcelHelpers.interopDefault(_createPlaylist);
 var _connectSpotify = require("./components/ConnectSpotify");
 var _connectSpotifyDefault = parcelHelpers.interopDefault(_connectSpotify);
 var _s = $RefreshSig$();
+const API_BASE = "http://127.0.0.1:8000";
 function Admin() {
     _s();
     const [checkingAdmin, setCheckingAdmin] = (0, _react.useState)(true);
@@ -29655,7 +29657,7 @@ function Admin() {
     (0, _react.useEffect)(()=>{
         async function checkAdmin() {
             try {
-                const res = await fetch("http://127.0.0.1:8000/admin/me", {
+                const res = await fetch(`${API_BASE}/admin/me`, {
                     credentials: "include"
                 });
                 setIsAdmin(res.ok);
@@ -29672,7 +29674,7 @@ function Admin() {
         if (!isAdmin) return;
         async function checkConfig() {
             try {
-                const res = await fetch("http://127.0.0.1:8000/playlist/config");
+                const res = await fetch(`${API_BASE}/playlist/config`);
                 if (!res.ok) throw new Error(`Status ${res.status}`);
                 const data = await res.json();
                 setPlaylistConfigured(data.exists);
@@ -29695,12 +29697,12 @@ function Admin() {
             children: "Loading\u2026"
         }, void 0, false, {
             fileName: "src/pages/Admin/index.tsx",
-            lineNumber: 73,
+            lineNumber: 75,
             columnNumber: 9
         }, this)
     }, void 0, false, {
         fileName: "src/pages/Admin/index.tsx",
-        lineNumber: 72,
+        lineNumber: 74,
         columnNumber: 7
     }, this);
     // Not logged in → show admin login
@@ -29710,7 +29712,7 @@ function Admin() {
         }
     }, void 0, false, {
         fileName: "src/pages/Admin/index.tsx",
-        lineNumber: 81,
+        lineNumber: 83,
         columnNumber: 7
     }, this);
     // Admin logged in but we haven't resolved config status yet
@@ -29719,12 +29721,12 @@ function Admin() {
             children: "Checking playlist status\u2026"
         }, void 0, false, {
             fileName: "src/pages/Admin/index.tsx",
-            lineNumber: 93,
+            lineNumber: 95,
             columnNumber: 9
         }, this)
     }, void 0, false, {
         fileName: "src/pages/Admin/index.tsx",
-        lineNumber: 92,
+        lineNumber: 94,
         columnNumber: 7
     }, this);
     // Admin logged in, playlist NOT configured → CreatePlaylist step
@@ -29735,7 +29737,7 @@ function Admin() {
         }
     }, void 0, false, {
         fileName: "src/pages/Admin/index.tsx",
-        lineNumber: 101,
+        lineNumber: 103,
         columnNumber: 7
     }, this);
     // Admin logged in, playlist configured but Spotify NOT connected → ConnectSpotify step
@@ -29745,7 +29747,7 @@ function Admin() {
         }
     }, void 0, false, {
         fileName: "src/pages/Admin/index.tsx",
-        lineNumber: 113,
+        lineNumber: 115,
         columnNumber: 7
     }, this);
     // Admin logged in, playlist configured AND Spotify connected → Admin dashboard
@@ -29769,7 +29771,7 @@ function Admin() {
                     children: "Admin Panel"
                 }, void 0, false, {
                     fileName: "src/pages/Admin/index.tsx",
-                    lineNumber: 134,
+                    lineNumber: 136,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -29782,19 +29784,19 @@ function Admin() {
                         "The playlist is configured and connected to Spotify.",
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                             fileName: "src/pages/Admin/index.tsx",
-                            lineNumber: 151,
+                            lineNumber: 153,
                             columnNumber: 11
                         }, this),
                         "You can extend this panel with more admin tools later (debug info, resync, stats, etc.)."
                     ]
                 }, void 0, true, {
                     fileName: "src/pages/Admin/index.tsx",
-                    lineNumber: 143,
+                    lineNumber: 145,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                     onClick: async ()=>{
-                        await fetch("http://127.0.0.1:8000/admin/logout", {
+                        await fetch(`${API_BASE}/admin/logout`, {
                             method: "POST",
                             credentials: "include"
                         });
@@ -29814,18 +29816,18 @@ function Admin() {
                     children: "Log out"
                 }, void 0, false, {
                     fileName: "src/pages/Admin/index.tsx",
-                    lineNumber: 156,
+                    lineNumber: 158,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/pages/Admin/index.tsx",
-            lineNumber: 124,
+            lineNumber: 126,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "src/pages/Admin/index.tsx",
-        lineNumber: 123,
+        lineNumber: 125,
         columnNumber: 5
     }, this);
 }
@@ -29845,7 +29847,7 @@ function AdminScreen({ children }) {
         children: children
     }, void 0, false, {
         fileName: "src/pages/Admin/index.tsx",
-        lineNumber: 185,
+        lineNumber: 187,
         columnNumber: 5
     }, this);
 }
@@ -29873,6 +29875,7 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _s = $RefreshSig$();
+const API_BASE = "http://127.0.0.1:8000";
 const AdminLogin = ({ onLoginSuccess })=>{
     _s();
     const [username, setUsername] = (0, _react.useState)("");
@@ -29884,7 +29887,7 @@ const AdminLogin = ({ onLoginSuccess })=>{
         setSubmitting(true);
         setError(null);
         try {
-            const res = await fetch("http://127.0.0.1:8000/admin/login", {
+            const res = await fetch(`${API_BASE}/admin/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -29917,7 +29920,7 @@ const AdminLogin = ({ onLoginSuccess })=>{
                     children: "Admin Login"
                 }, void 0, false, {
                     fileName: "src/pages/Admin/components/AdminLogin/index.tsx",
-                    lineNumber: 44,
+                    lineNumber: 46,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -29925,7 +29928,7 @@ const AdminLogin = ({ onLoginSuccess })=>{
                     children: "Configure playlist & connect Spotify"
                 }, void 0, false, {
                     fileName: "src/pages/Admin/components/AdminLogin/index.tsx",
-                    lineNumber: 45,
+                    lineNumber: 47,
                     columnNumber: 9
                 }, undefined),
                 error && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -29933,7 +29936,7 @@ const AdminLogin = ({ onLoginSuccess })=>{
                     children: error
                 }, void 0, false, {
                     fileName: "src/pages/Admin/components/AdminLogin/index.tsx",
-                    lineNumber: 47,
+                    lineNumber: 49,
                     columnNumber: 19
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
@@ -29944,7 +29947,7 @@ const AdminLogin = ({ onLoginSuccess })=>{
                             children: "Username"
                         }, void 0, false, {
                             fileName: "src/pages/Admin/components/AdminLogin/index.tsx",
-                            lineNumber: 50,
+                            lineNumber: 52,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -29953,7 +29956,7 @@ const AdminLogin = ({ onLoginSuccess })=>{
                             onChange: (e)=>setUsername(e.target.value)
                         }, void 0, false, {
                             fileName: "src/pages/Admin/components/AdminLogin/index.tsx",
-                            lineNumber: 51,
+                            lineNumber: 53,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -29961,7 +29964,7 @@ const AdminLogin = ({ onLoginSuccess })=>{
                             children: "Password"
                         }, void 0, false, {
                             fileName: "src/pages/Admin/components/AdminLogin/index.tsx",
-                            lineNumber: 57,
+                            lineNumber: 59,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -29971,7 +29974,7 @@ const AdminLogin = ({ onLoginSuccess })=>{
                             onChange: (e)=>setPassword(e.target.value)
                         }, void 0, false, {
                             fileName: "src/pages/Admin/components/AdminLogin/index.tsx",
-                            lineNumber: 58,
+                            lineNumber: 60,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -29981,24 +29984,24 @@ const AdminLogin = ({ onLoginSuccess })=>{
                             children: submitting ? "Signing in\u2026" : "Sign in"
                         }, void 0, false, {
                             fileName: "src/pages/Admin/components/AdminLogin/index.tsx",
-                            lineNumber: 65,
+                            lineNumber: 67,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/pages/Admin/components/AdminLogin/index.tsx",
-                    lineNumber: 49,
+                    lineNumber: 51,
                     columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/pages/Admin/components/AdminLogin/index.tsx",
-            lineNumber: 43,
+            lineNumber: 45,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/pages/Admin/components/AdminLogin/index.tsx",
-        lineNumber: 42,
+        lineNumber: 44,
         columnNumber: 5
     }, undefined);
 };
@@ -30094,6 +30097,7 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _s = $RefreshSig$();
+const API_BASE = "http://127.0.0.1:8000";
 const CreatePlaylist = ({ onConfigured })=>{
     _s();
     const [name, setName] = (0, _react.useState)("");
@@ -30106,7 +30110,7 @@ const CreatePlaylist = ({ onConfigured })=>{
     (0, _react.useEffect)(()=>{
         async function loadStatus() {
             try {
-                const res = await fetch("http://127.0.0.1:8000/playlist/config");
+                const res = await fetch(`${API_BASE}/playlist/config`);
                 const data = await res.json();
                 setPlaylistExists(data.exists);
                 if (!data.exists) {
@@ -30124,7 +30128,7 @@ const CreatePlaylist = ({ onConfigured })=>{
         children: "Checking playlist status\u2026"
     }, void 0, false, {
         fileName: "src/pages/Admin/components/CreatePlaylist/index.tsx",
-        lineNumber: 45,
+        lineNumber: 47,
         columnNumber: 12
     }, undefined);
     if (playlistExists === true) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(CenteredScreen, {
@@ -30135,7 +30139,7 @@ const CreatePlaylist = ({ onConfigured })=>{
                     children: "Playlist already configured"
                 }, void 0, false, {
                     fileName: "src/pages/Admin/components/CreatePlaylist/index.tsx",
-                    lineNumber: 52,
+                    lineNumber: 54,
                     columnNumber: 11
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -30145,18 +30149,18 @@ const CreatePlaylist = ({ onConfigured })=>{
                     children: "You may return to the admin panel."
                 }, void 0, false, {
                     fileName: "src/pages/Admin/components/CreatePlaylist/index.tsx",
-                    lineNumber: 53,
+                    lineNumber: 55,
                     columnNumber: 11
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/pages/Admin/components/CreatePlaylist/index.tsx",
-            lineNumber: 51,
+            lineNumber: 53,
             columnNumber: 9
         }, undefined)
     }, void 0, false, {
         fileName: "src/pages/Admin/components/CreatePlaylist/index.tsx",
-        lineNumber: 50,
+        lineNumber: 52,
         columnNumber: 7
     }, undefined);
     const handleSubmit = async (e)=>{
@@ -30164,7 +30168,7 @@ const CreatePlaylist = ({ onConfigured })=>{
         setSubmitting(true);
         setError(null);
         try {
-            const res = await fetch("http://127.0.0.1:8000/playlist/config", {
+            const res = await fetch(`${API_BASE}/playlist/config`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -30207,7 +30211,7 @@ const CreatePlaylist = ({ onConfigured })=>{
                             }
                         }, void 0, false, {
                             fileName: "src/pages/Admin/components/CreatePlaylist/index.tsx",
-                            lineNumber: 96,
+                            lineNumber: 98,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -30219,13 +30223,13 @@ const CreatePlaylist = ({ onConfigured })=>{
                             children: "Cover preview"
                         }, void 0, false, {
                             fileName: "src/pages/Admin/components/CreatePlaylist/index.tsx",
-                            lineNumber: 107,
+                            lineNumber: 109,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/pages/Admin/components/CreatePlaylist/index.tsx",
-                    lineNumber: 95,
+                    lineNumber: 97,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -30239,7 +30243,7 @@ const CreatePlaylist = ({ onConfigured })=>{
                             children: "Create Playlist"
                         }, void 0, false, {
                             fileName: "src/pages/Admin/components/CreatePlaylist/index.tsx",
-                            lineNumber: 113,
+                            lineNumber: 115,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -30250,7 +30254,7 @@ const CreatePlaylist = ({ onConfigured })=>{
                             children: "This defines the single playlist for your app."
                         }, void 0, false, {
                             fileName: "src/pages/Admin/components/CreatePlaylist/index.tsx",
-                            lineNumber: 114,
+                            lineNumber: 116,
                             columnNumber: 11
                         }, undefined),
                         error && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -30258,7 +30262,7 @@ const CreatePlaylist = ({ onConfigured })=>{
                             children: error
                         }, void 0, false, {
                             fileName: "src/pages/Admin/components/CreatePlaylist/index.tsx",
-                            lineNumber: 118,
+                            lineNumber: 120,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
@@ -30274,12 +30278,12 @@ const CreatePlaylist = ({ onConfigured })=>{
                                         required: true
                                     }, void 0, false, {
                                         fileName: "src/pages/Admin/components/CreatePlaylist/index.tsx",
-                                        lineNumber: 122,
+                                        lineNumber: 124,
                                         columnNumber: 15
                                     }, undefined)
                                 }, void 0, false, {
                                     fileName: "src/pages/Admin/components/CreatePlaylist/index.tsx",
-                                    lineNumber: 121,
+                                    lineNumber: 123,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Field, {
@@ -30295,12 +30299,12 @@ const CreatePlaylist = ({ onConfigured })=>{
                                         disabled: true
                                     }, void 0, false, {
                                         fileName: "src/pages/Admin/components/CreatePlaylist/index.tsx",
-                                        lineNumber: 132,
+                                        lineNumber: 134,
                                         columnNumber: 15
                                     }, undefined)
                                 }, void 0, false, {
                                     fileName: "src/pages/Admin/components/CreatePlaylist/index.tsx",
-                                    lineNumber: 131,
+                                    lineNumber: 133,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Field, {
@@ -30312,12 +30316,12 @@ const CreatePlaylist = ({ onConfigured })=>{
                                         placeholder: "https://\u2026"
                                     }, void 0, false, {
                                         fileName: "src/pages/Admin/components/CreatePlaylist/index.tsx",
-                                        lineNumber: 142,
+                                        lineNumber: 144,
                                         columnNumber: 15
                                     }, undefined)
                                 }, void 0, false, {
                                     fileName: "src/pages/Admin/components/CreatePlaylist/index.tsx",
-                                    lineNumber: 141,
+                                    lineNumber: 143,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -30327,30 +30331,30 @@ const CreatePlaylist = ({ onConfigured })=>{
                                     children: submitting ? "Saving\u2026" : "Save configuration"
                                 }, void 0, false, {
                                     fileName: "src/pages/Admin/components/CreatePlaylist/index.tsx",
-                                    lineNumber: 150,
+                                    lineNumber: 152,
                                     columnNumber: 13
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/pages/Admin/components/CreatePlaylist/index.tsx",
-                            lineNumber: 120,
+                            lineNumber: 122,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/pages/Admin/components/CreatePlaylist/index.tsx",
-                    lineNumber: 112,
+                    lineNumber: 114,
                     columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/pages/Admin/components/CreatePlaylist/index.tsx",
-            lineNumber: 94,
+            lineNumber: 96,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/pages/Admin/components/CreatePlaylist/index.tsx",
-        lineNumber: 93,
+        lineNumber: 95,
         columnNumber: 5
     }, undefined);
 };
@@ -30374,7 +30378,7 @@ function CenteredScreen({ children }) {
         children: children
     }, void 0, false, {
         fileName: "src/pages/Admin/components/CreatePlaylist/index.tsx",
-        lineNumber: 172,
+        lineNumber: 174,
         columnNumber: 5
     }, this);
 }
@@ -30394,14 +30398,14 @@ function Field({ label, children }) {
                 children: label
             }, void 0, false, {
                 fileName: "src/pages/Admin/components/CreatePlaylist/index.tsx",
-                lineNumber: 191,
+                lineNumber: 193,
                 columnNumber: 7
             }, this),
             children
         ]
     }, void 0, true, {
         fileName: "src/pages/Admin/components/CreatePlaylist/index.tsx",
-        lineNumber: 190,
+        lineNumber: 192,
         columnNumber: 5
     }, this);
 }
@@ -30483,6 +30487,7 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _s = $RefreshSig$();
+const API_BASE = "http://127.0.0.1:8000";
 const ConnectSpotify = ({ onConnected })=>{
     _s();
     const [loading, setLoading] = (0, _react.useState)(false);
@@ -30491,7 +30496,7 @@ const ConnectSpotify = ({ onConnected })=>{
         setLoading(true);
         setError(null);
         try {
-            const res = await fetch("http://127.0.0.1:8000/admin/spotify/authorize", {
+            const res = await fetch(`${API_BASE}/admin/spotify/authorize`, {
                 credentials: "include"
             });
             if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -30519,7 +30524,7 @@ const ConnectSpotify = ({ onConnected })=>{
                     children: "Connect Spotify"
                 }, void 0, false, {
                     fileName: "src/pages/Admin/components/ConnectSpotify/index.tsx",
-                    lineNumber: 41,
+                    lineNumber: 43,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -30530,7 +30535,7 @@ const ConnectSpotify = ({ onConnected })=>{
                     children: "To allow this app to add songs to a playlist, we need permission from Spotify. This process will:"
                 }, void 0, false, {
                     fileName: "src/pages/Admin/components/ConnectSpotify/index.tsx",
-                    lineNumber: 45,
+                    lineNumber: 47,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
@@ -30544,27 +30549,27 @@ const ConnectSpotify = ({ onConnected })=>{
                             children: "Authenticate your Spotify account"
                         }, void 0, false, {
                             fileName: "src/pages/Admin/components/ConnectSpotify/index.tsx",
-                            lineNumber: 51,
+                            lineNumber: 53,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                             children: "Create or link the playlist in Spotify"
                         }, void 0, false, {
                             fileName: "src/pages/Admin/components/ConnectSpotify/index.tsx",
-                            lineNumber: 52,
+                            lineNumber: 54,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                             children: "Save a secure refresh token in the backend"
                         }, void 0, false, {
                             fileName: "src/pages/Admin/components/ConnectSpotify/index.tsx",
-                            lineNumber: 53,
+                            lineNumber: 55,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/pages/Admin/components/ConnectSpotify/index.tsx",
-                    lineNumber: 50,
+                    lineNumber: 52,
                     columnNumber: 9
                 }, undefined),
                 error && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -30572,7 +30577,7 @@ const ConnectSpotify = ({ onConnected })=>{
                     children: error
                 }, void 0, false, {
                     fileName: "src/pages/Admin/components/ConnectSpotify/index.tsx",
-                    lineNumber: 56,
+                    lineNumber: 58,
                     columnNumber: 19
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -30582,18 +30587,18 @@ const ConnectSpotify = ({ onConnected })=>{
                     children: loading ? "Connecting\u2026" : "Connect with Spotify"
                 }, void 0, false, {
                     fileName: "src/pages/Admin/components/ConnectSpotify/index.tsx",
-                    lineNumber: 58,
+                    lineNumber: 60,
                     columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/pages/Admin/components/ConnectSpotify/index.tsx",
-            lineNumber: 40,
+            lineNumber: 42,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/pages/Admin/components/ConnectSpotify/index.tsx",
-        lineNumber: 39,
+        lineNumber: 41,
         columnNumber: 5
     }, undefined);
 };
@@ -30617,7 +30622,7 @@ function CenteredScreen({ children }) {
         children: children
     }, void 0, false, {
         fileName: "src/pages/Admin/components/ConnectSpotify/index.tsx",
-        lineNumber: 78,
+        lineNumber: 80,
         columnNumber: 5
     }, this);
 }

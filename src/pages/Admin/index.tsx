@@ -10,6 +10,8 @@ interface PlaylistConfigStatus {
   spotify_playlist_id: string | null;
 }
 
+const API_BASE = process.env.API_URL;
+
 export function Admin() {
   const [checkingAdmin, setCheckingAdmin] = useState(true);
   const [isAdmin, setIsAdmin] = useState(false);
@@ -21,7 +23,7 @@ export function Admin() {
   useEffect(() => {
     async function checkAdmin() {
       try {
-        const res = await fetch("http://127.0.0.1:8000/admin/me", {
+        const res = await fetch(`${API_BASE}/admin/me`, {
           credentials: "include",
         });
         setIsAdmin(res.ok);
@@ -41,7 +43,7 @@ export function Admin() {
 
     async function checkConfig() {
       try {
-        const res = await fetch("http://127.0.0.1:8000/playlist/config");
+        const res = await fetch(`${API_BASE}/playlist/config`);
         if (!res.ok) {
           throw new Error(`Status ${res.status}`);
         }
@@ -155,7 +157,7 @@ export function Admin() {
 
         <button
           onClick={async () => {
-            await fetch("http://127.0.0.1:8000/admin/logout", {
+            await fetch(`${API_BASE}/admin/logout`, {
               method: "POST",
               credentials: "include",
             });

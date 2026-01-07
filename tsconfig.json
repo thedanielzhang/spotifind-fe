@@ -10,5 +10,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
+    "types": ["node"],
+    "lib": ["DOM", "ES2022"]
   }
 }
