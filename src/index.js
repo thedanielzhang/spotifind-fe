@@ -13,6 +13,7 @@ const root = createRoot(container)
 root.render(
     <BrowserRouter>
         <Routes>
+            <Route path="/" element={<App />} />
             <Route path="/playlist" element={<Playlist />} />
             <Route path="/admin" element={<Admin />} />
         </Routes>

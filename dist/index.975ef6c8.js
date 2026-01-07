@@ -2961,11 +2961,11 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouter.BrowserRou
     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouter.Routes), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouter.Route), {
-                path: "/playlist",
-                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _playlist.Playlist), {}, void 0, false, {
+                path: "/",
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _appDefault.default), {}, void 0, false, {
                     fileName: "src/index.js",
                     lineNumber: 11,
-                    columnNumber: 46
+                    columnNumber: 38
                 }, void 0)
             }, void 0, false, {
                 fileName: "src/index.js",
@@ -2973,15 +2973,27 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouter.BrowserRou
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouter.Route), {
-                path: "/admin",
-                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _admin.Admin), {}, void 0, false, {
+                path: "/playlist",
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _playlist.Playlist), {}, void 0, false, {
                     fileName: "src/index.js",
                     lineNumber: 12,
-                    columnNumber: 43
+                    columnNumber: 46
                 }, void 0)
             }, void 0, false, {
                 fileName: "src/index.js",
                 lineNumber: 12,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouter.Route), {
+                path: "/admin",
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _admin.Admin), {}, void 0, false, {
+                    fileName: "src/index.js",
+                    lineNumber: 13,
+                    columnNumber: 43
+                }, void 0)
+            }, void 0, false, {
+                fileName: "src/index.js",
+                lineNumber: 13,
                 columnNumber: 13
             }, undefined)
         ]
@@ -29847,7 +29859,7 @@ $RefreshReg$(_c1, "AdminScreen");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/AdminLogin":"cuxcQ","./components/CreatePlaylist":"QeYFk","./components/ConnectSpotify":"2lO2v"}],"cuxcQ":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./components/AdminLogin":"cuxcQ","./components/CreatePlaylist":"QeYFk","./components/ConnectSpotify":"2lO2v","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cuxcQ":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$0a85 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -31016,7 +31028,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./App.css":"6n0o6","./floatingNotes.js":"9uiwZ"}],"6n0o6":[function() {},{}],"9uiwZ":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./App.css":"6n0o6","./floatingNotes.js":"9uiwZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6n0o6":[function() {},{}],"9uiwZ":[function(require,module,exports,__globalThis) {
 // Dynamic floating notes animation system
 // This script automatically positions and animates any number of floating-note elements
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
