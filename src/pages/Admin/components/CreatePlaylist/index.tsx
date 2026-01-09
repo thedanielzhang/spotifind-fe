@@ -125,7 +125,6 @@ const CreatePlaylist: React.FC<CreatePlaylistProps> = ({ onConfigured }) => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 style={inputStyle}
-                disabled={true}
                 required
               />
             </Field>
@@ -136,7 +135,6 @@ const CreatePlaylist: React.FC<CreatePlaylistProps> = ({ onConfigured }) => {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 style={{ ...inputStyle, resize: "vertical" }}
-                disabled={true}
               />
             </Field>
 
